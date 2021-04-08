@@ -31,6 +31,7 @@ If using GRIPS for scientific publications, please cite the following paper:
 * Eigen 3
 * [OMPL ~1.3.1](https://github.com/ompl/ompl/releases)
 * Qt5 (ensure the Qt Charts and SVG packages are installed)
+* sudo apt install libqt5svg5-dev libqt5charts5-dev
 
 ## Content
 The following CMake targets are available:
