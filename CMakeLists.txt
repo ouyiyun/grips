@@ -13,12 +13,15 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 find_package(Eigen3 REQUIRED NO_MODULE)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
+find_package(ompl REQUIRED)
+include_directories(${OMPL_INCLUDE_DIRS})
+
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets Charts Svg)
 include_directories( ${CMAKE_BINARY_DIR} )
 set(CMAKE_AUTOMOC ON)
 file(GLOB GUI_SRC gui/*.?pp)
 set(EXTRA_SRC ${EXTRA_SRC} ${GUI_SRC})
-set(EXTRA_LIB ${EXTRA_LIB} Qt5::Core Qt5::Widgets Qt5::Charts Qt5::Svg)
+set(EXTRA_LIB ${EXTRA_LIB} Qt5::Core Qt5::Widgets Qt5::Charts Qt5::Svg ${OMPL_LIBRARIES})
 
 option(USE_G1 "Use G1 clothoid steering (not Open Source)" OFF)
 if (USE_G1)
